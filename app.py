@@ -61,7 +61,7 @@ if st.button("🚀 Analyze & Fix Code", type="primary"):
                 )
                 fixed_code = response_2.text
                 
-                status.update(label="✅ Analysis Complete!", state="complete")
+                status.update(label="✅ Analysis Complete!", state="complete", expanded=False)
             
             except Exception as e:
                 status.update(label="❌ An error occurred.", state="error")
