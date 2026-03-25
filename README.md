@@ -53,4 +53,4 @@ The pipeline operates in two distinct stages:
 
 1. Run the script from your terminal:
    ```bash
-   python reviewer.py
+   python agent.py
