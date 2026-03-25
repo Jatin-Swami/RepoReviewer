@@ -15,7 +15,7 @@ with st.sidebar:
     st.markdown("- **🔍 Agent 1 (Reviewer):** Acts as a Senior QA. Strictly looks for bugs, edge cases, and security risks.")
     st.markdown("- **🛠️ Agent 2 (Fixer):** Acts as a Senior Developer. Takes the QA report and refactors the code without complaining.")
     st.divider()
-    st.caption("Powered by Gemini 2.5 Flash Lite")
+    st.caption("Powered by Gemini 2.5 Flash")
 
 st.title("🕵️‍♂️ Multi-Agent Code Optimizer")
 st.markdown("Paste your code below to get an expert review and a refactored version.")
