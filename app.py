@@ -33,7 +33,7 @@ if st.button("🚀 Analyze & Fix Code", type="primary"):
         st.warning("⚠️ Please enter some code to analyze.")
     else:
         # Replaced st.status with st.spinner here to completely remove the blank dropdown box issue while keeping 2 agents
-        with st.spinner("🤖 Agents are reviewing and fixing your code..."):
+        with st.spinner("Agents are reviewing and fixing your code..."):
             try:
                 sys_msg_1 = "You are a Senior QA Engineer. Analyze code for bugs and security risks. Be concise. Bullet points only."
                 response_1 = client.models.generate_content(
