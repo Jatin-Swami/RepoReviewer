@@ -10,15 +10,50 @@ MODEL_ID = "gemini-2.5-flash"
 
 st.set_page_config(page_title="AI Code Reviewer", page_icon="🕵️‍♂️", layout="wide")
 
+# --- ADDED: Custom CSS and HTML injection to create a fixed, sticky header ---
+st.markdown(
+    """
+    <style>
+    .sticky-header {
+        position: fixed;
+        top: 0;
+        left: 21rem; /* Aligns past the default expanded sidebar */
+        right: 0;
+        background-color: #0e1117; /* Streamlit dark mode background */
+        padding: 3rem 2rem 1rem 0rem;
+        z-index: 990;
+    }
+    /* Pushes the main app content down so it doesn't hide behind the sticky header */
+    .block-container {
+        padding-top: 10rem !important;
+    }
+    /* Ensures the Deploy/GitHub top-right menu stays clickable above our background */
+    [data-testid="stHeader"] {
+        background-color: transparent;
+        z-index: 1000;
+    }
+    /* Adjusts for mobile screens when the sidebar collapses */
+    @media (max-width: 768px) {
+        .sticky-header {
+            left: 2rem;
+        }
+    }
+    </style>
+    <div class="sticky-header">
+        <h1 style="margin: 0;">🕵️‍♂️ RepoReviewer</h1>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
 with st.sidebar:
     st.header("⚙️ About the System")
     st.write("This tool uses two distinct AI personas:")
-    st.markdown("- **🔍 Agent 1 (Reviewer):** Acts as a Senior QA Engineer to check for errors or bugs.")
-    st.markdown("- **🛠️ Agent 2 (Fixer):** Acts as a Senior Developer and fixes the input code based on the first agent's review.")
+    st.markdown("- **🔍 Agent 1 (Reviewer):** Acts as a Senior QA.")
+    st.markdown("- **🛠️ Agent 2 (Fixer):** Acts as a Senior Developer.")
     st.divider()
     st.caption(f"Powered by {MODEL_ID}")
 
-st.title("🕵️‍♂️ RepoReviewer")
 st.markdown("Paste your code below to get an expert review and a refactored version.")
 
 user_code = st.text_area("Source Code", height=250, placeholder="Paste your code here...")
@@ -32,7 +67,6 @@ if st.button("🚀 Analyze & Fix Code", type="primary"):
     if not user_code:
         st.warning("⚠️ Please enter some code to analyze.")
     else:
-        # Replaced st.status with st.spinner here to completely remove the blank dropdown box issue while keeping 2 agents
         with st.spinner("Agents are reviewing and fixing your code..."):
             try:
                 sys_msg_1 = "You are a Senior QA Engineer. Analyze code for bugs and security risks. Be concise. Bullet points only."
