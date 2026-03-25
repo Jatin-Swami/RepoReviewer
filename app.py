@@ -5,7 +5,7 @@ from google import genai
 
 load_dotenv()
 client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
-MODEL_ID = "gemini-2.5-flash-lite"
+MODEL_ID = MODEL_ID = "gemini-2.5-flash"
 
 st.set_page_config(page_title="AI Code Reviewer", page_icon="🕵️‍♂️", layout="wide")
 
