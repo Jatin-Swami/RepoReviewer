@@ -72,19 +72,3 @@ if st.button("🚀 Analyze & Fix Code", type="primary"):
         with col2:
             st.markdown("### 🟢 Optimized Code")
             st.markdown(fixed_code)
-
-"""
-def get_user_data(user_id):
-    # connecting to db
-    db = "my_database_connection"
-    
-    if user_id == None:
-        return "Error"
-        
-    query = "SELECT * FROM users WHERE id = " + str(user_id)
-    result = db.execute(query)
-    
-    return result
-
-print(get_user_data(None))
-"""
