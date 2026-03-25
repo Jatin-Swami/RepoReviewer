@@ -1,5 +1,7 @@
 # 🔍 Repo Reviewer
 
+**[🚀 Try the Live App Here!](https://your-app-name.streamlit.app)**
+
 ![Repo Reviewer Poster](Poster.png)
 
 **Repo Reviewer** is an AI-powered code analysis and repair pipeline. It leverages a dual-agent architecture powered by Google's `gemini-2.5-flash-lite` model to automatically detect bugs, identify security vulnerabilities, and generate clean, corrected code.
