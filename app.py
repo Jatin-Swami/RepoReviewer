@@ -13,12 +13,12 @@ st.set_page_config(page_title="AI Code Reviewer", page_icon="🕵️‍♂️", 
 with st.sidebar:
     st.header("⚙️ About the System")
     st.write("This tool uses two distinct AI personas:")
-    st.markdown("- **🔍 Agent 1 (Reviewer):** Acts as a Senior QA.")
-    st.markdown("- **🛠️ Agent 2 (Fixer):** Acts as a Senior Developer.")
+    st.markdown("- **🔍 Agent 1 (Reviewer):** Acts as a Senior QA Engineer to check for errors or bugs.")
+    st.markdown("- **🛠️ Agent 2 (Fixer):** Acts as a Senior Developer and fixes the input code based on the first agent's review.")
     st.divider()
     st.caption(f"Powered by {MODEL_ID}")
 
-st.title("🕵️‍♂️ Multi-Agent Code Optimizer")
+st.title("🕵️‍♂️ RepoReviewer")
 st.markdown("Paste your code below to get an expert review and a refactored version.")
 
 user_code = st.text_area("Source Code", height=250, placeholder="Paste your code here...")
