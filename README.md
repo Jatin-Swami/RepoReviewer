@@ -32,7 +32,7 @@ The pipeline operates in two distinct stages:
 * Python 3.8 or higher
 * A Google Gemini API Key
 
-### Installation
+### Installation to run locally
 
 1.  **Clone the repository:**
     ```bash
@@ -42,7 +42,7 @@ The pipeline operates in two distinct stages:
 
 2.  **Install the required dependencies:**
     ```bash
-    pip install google-genai python-dotenv
+    pip install -r requirements.txt
     ```
 
 3.  **Set up your environment variables:**
@@ -55,4 +55,4 @@ The pipeline operates in two distinct stages:
 
 1. Run the script from your terminal:
    ```bash
-   python agent.py
+   streamlit run app.py
