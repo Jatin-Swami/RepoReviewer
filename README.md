@@ -1,6 +1,6 @@
 # 🔍 Repo Reviewer
 
-**[🚀 Try the Live App Here!](https://your-app-name.streamlit.app)**
+**[🚀 Try the Live App Here!](https://reporeviewer.streamlit.app)**
 
 ![Repo Reviewer Poster](Poster.jpeg)
 
